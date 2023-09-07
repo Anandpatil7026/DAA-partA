@@ -1,11 +1,10 @@
-n = int(input("Enter the number (upto which series should be printed) :" ))
-num1,num2  = 0, 1
-next_number = num2
-count = 1
+def fibonacci(n):
+    fib_series = [0, 1]
+    for i in range(2, n):
+        fib_series.append(fib_series[i - 1] + fib_series[i - 2])
+    return fib_series
 
-while count <= n:
-    print(next_number, end=" ")
-    count += 1
-    num1, num2 = num2, next_number
-    next_number = num1 + num2
-print()
+
+num = int(input("Enter the number: "))
+fibonacci_series = fibonacci(num)
+print("Fibonacci series for", num, ":", fibonacci_series)
